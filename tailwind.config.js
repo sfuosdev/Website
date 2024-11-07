@@ -21,6 +21,7 @@ export default {
           light: '#312e81', /* Slightly lighter purple for contrast */
           DEFAULT: '#1e1b4b', /* Dark purple background */
           dark: '#0f172a', /* Very dark purple, almost black */
+          header: '#282A36',
         },
       },
     },
