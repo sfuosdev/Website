@@ -25,7 +25,11 @@ export default {
         },
         icons: {
           logoGradient: 'linear-gradient(135deg, #00b4d8, #48cae4, #90e0ef, #00ff87)',
-        }
+        },
+        button: {
+          primary: '#5C96A7',
+          hover: '#74A9B8',
+        },
       },
       fontFamily: {
         club: ['Sarpanch'],

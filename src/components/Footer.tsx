@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-8 flex justify-between items-center">
         <h2 className="text-xl font-club font-bold">@SFU Open Source Development Club</h2>
 
-        <div className="w-16 grid grid-cols-2 gap-3 md:flex md:flex-row md:justify-center">
+        <div className="w-16 grid grid-cols-2 gap-3 md:w-[148px] md:flex md:flex-row md:justify-center">
           <button
             onClick={() => handleSocialClick('Instagram', 'https://www.instagram.com/sfuosdev')}
             className="transition-all duration-300 group"
