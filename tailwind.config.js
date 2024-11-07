@@ -23,6 +23,12 @@ export default {
           dark: '#0f172a', /* Very dark purple, almost black */
           header: '#282A36',
         },
+        icons: {
+          logoGradient: 'linear-gradient(135deg, #00b4d8, #48cae4, #90e0ef, #00ff87)',
+        }
+      },
+      fontFamily: {
+        club: ['Sarpanch'],
       },
     },
   },

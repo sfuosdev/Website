@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -35,4 +36,12 @@ body {
 
 .section-title {
   @apply text-4xl font-bold mb-8 text-gradient;
+}
+
+.logo-gradient {
+  background: linear-gradient(135deg, #38bdf8, #c084fc); /* Adjust colors as needed */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
