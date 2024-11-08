@@ -21,7 +21,18 @@ export default {
           light: '#312e81', /* Slightly lighter purple for contrast */
           DEFAULT: '#1e1b4b', /* Dark purple background */
           dark: '#0f172a', /* Very dark purple, almost black */
+          header: '#282A36',
         },
+        icons: {
+          logoGradient: 'linear-gradient(135deg, #00b4d8, #48cae4, #90e0ef, #00ff87)',
+        },
+        button: {
+          primary: '#5C96A7',
+          hover: '#74A9B8',
+        },
+      },
+      fontFamily: {
+        club: ['Sarpanch'],
       },
     },
   },
