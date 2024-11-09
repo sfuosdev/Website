@@ -50,20 +50,22 @@ const Teams = () => {
 
         <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
           
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light min-w-[250px] mb-8">
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/daniel-pham-5b4873286/" target="blank_">
               <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-pham.png" alt="Daniel Pham" />
             </a>
-            <h3 className="text-xl font-semibold text-white mb-4">Daniel Pham</h3>
-            <p className="text-gray-300">Co-President</p>
+            <h3 className="text-xl font-semibold text-white mb-1">Daniel Pham</h3>
+            <p className="text-primary-light mb-2">Co-President</p>
+            <p className="text-gray-300 text-sm">Daniel brings a deep commitment to open-source software and business, aiming to empower students to contribute to impactful projects.</p>
           </div>
         
-          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/tommy-oh-766450217/" target="blank_">
               <img className="max-w-[250px] mb-4 rounded-lg" src="tommy.jfif" alt="Tommy Oh" />
             </a>
-            <h3 className="text-xl font-semibold text-white mb-4">Tommy (Kanggeon) Oh</h3>
-            <p className="text-gray-300">Co-President</p>
+            <h3 className="text-xl font-semibold text-white mb-1">Tommy (Kanggeon) Oh</h3>
+            <p className="text-primary-light mb-2">Co-President</p>
+            <p className="text-gray-300 text-sm">With a passion for technology and community, Tommy focuses on creating an inclusive space for developers of all levels at SFU.</p>
           </div>
           
         </div>
@@ -73,24 +75,26 @@ const Teams = () => {
 
         <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
 
-          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/sean-wotherspoon/" target="blank_">
               <img className="max-w-[250px] mb-4 rounded-lg" src="sean.jfif" alt="Sean Wotherspoon" />
             </a>
-            <h3 className="text-xl font-semibold text-white mb-4">Sean Wotherspoon</h3>
-            <p className="text-gray-300 text-center">Director of Technology</p>
+            <h3 className="text-xl font-semibold text-white mb-1">Sean Wotherspoon</h3>
+            <p className="text-primary-light mb-2">Director of Technology</p>
+            <p className="text-gray-300 text-sm">Sean leads the technical direction, ensuring innovative solutions and high-quality standards in club projects.</p>
           </div>
           
-          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/daniel-ahn-59b649297/" target="blank_">
               <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-ahn.jfif" alt="Daniel Ahn" />
             </a>
-            <h3 className="text-xl font-semibold text-white mb-4">Daniel Ahn</h3>
-            <p className="text-gray-300">Director of Communications</p>
+            <h3 className="text-xl font-semibold text-white mb-1">Daniel Ahn</h3>
+            <p className="text-primary-light mb-2">Director of Communications</p>
+            <p className="text-gray-300 text-sm">Daniel oversees all communications, helping to keep the community informed and engaged in upcoming events.</p>
           </div>
           
 
-          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/dhruvgpt/" target="blank_">
               {/* <img className="max-w-[250px] mb-4 rounded-lg" src="image.png" alt="Dhruv Gupta" /> */}
               <div className="w-full h-full max-w-[250px] max-h-[250px] mb-4 rounded-lg flex justify-center items-center">
@@ -99,16 +103,18 @@ const Teams = () => {
                 </svg>
               </div>
             </a>
-            <h3 className="text-xl font-semibold text-white mb-4">Dhruv Gupta</h3>
-            <p className="text-gray-300">Director of Strategy</p>
+            <h3 className="text-xl font-semibold text-white mb-1">Dhruv Gupta</h3>
+            <p className="text-primary-light mb-2">Director of Strategy</p>
+            <p className="text-gray-300 text-sm">Dhruv develops and executes the club's strategic plans, driving growth and sustainability for future initiatives.</p>
           </div>
           
-          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/jeeya-parasbhai-khavadia-55b243239/" target="blank_">
               <img className="max-w-[250px] mb-4 rounded-lg" src="jeeya.jfif" alt="Jeeya Parasbhai Khavadia" />
             </a>
-            <h3 className="text-xl font-semibold text-white mb-4">Jeeya Parasbhai Khavadia</h3>
-            <p className="text-gray-300">Director of Events</p>
+            <h3 className="text-xl font-semibold text-white mb-1">Jeeya Parasbhai Khavadia</h3>
+            <p className="text-primary-light mb-2">Director of Events</p>
+            <p className="text-gray-300 text-sm">Jeeya plans and organizes events that bring members together to learn, network, and build impactful projects.</p>
           </div>
 
         </div>
