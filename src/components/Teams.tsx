@@ -82,7 +82,7 @@ const Teams = () => {
           </div>
           
           <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
-            <a href="https://www.linkedin.com/in/daniel-pham-5b4873286/" target="blank_">
+            <a href="https://www.linkedin.com/in/daniel-ahn-59b649297/" target="blank_">
               <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-ahn.jfif" alt="Daniel Ahn" />
             </a>
             <h3 className="text-xl font-semibold text-white mb-4">Daniel Ahn</h3>
