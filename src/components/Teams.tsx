@@ -120,6 +120,18 @@ const Teams = () => {
         </div>
 
       </section>
+
+      {/* Join Us CTA Banner Section */}
+      <section className="py-24 text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold font-club mb-6 text-white">Start Your Journey With Us</h2>
+          <div className="flex justify-center">
+            <a href="/projects" className="flex flex-row px-4 py-2 rounded w-full max-w-[255px] btn btn-primary text-left text-white transition duration-300">
+              <p className="mr-4">&gt;</p>./START_UR_JOURNEY
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
