@@ -11,7 +11,7 @@ import Resources from './components/Resources'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-background flex flex-col">
+      <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
           <Routes>
