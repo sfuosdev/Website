@@ -32,7 +32,7 @@ const Teams = () => {
     <div className="mt-[60px] md:mt-[80px]">
       {/* Hero Section */}
       <section className="bg-gradient-2 py-32 flex flex-col justify-center items-start">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 sm:px-12">
           <h1 className="text-6xl font-bold font-club mb-6 text-white">Meet Our Executive Team</h1>
           <p className="text-xl mb-10 text-white">
             Get to know the passionate leaders driving innovation and collaboration at SFU Open Source Development Club. Our executive team is dedicated to empowering students, fostering open-source contributions, and building a vibrant developer community at SFU.
@@ -44,7 +44,7 @@ const Teams = () => {
       </section>
 
       {/* Team Section */}
-      <section className="container mx-auto flex flex-col w-full py-16 px-4">
+      <section className="container mx-auto flex flex-col w-full py-16 px-6 sm:px-12">
         {/* Presidents */}
         <h2 className="section-title font-club text-center sm:text-left">Presidents</h2>
 
