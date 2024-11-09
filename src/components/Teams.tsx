@@ -46,50 +46,73 @@ const Teams = () => {
       {/* Team Section */}
       <section className="container mx-auto flex flex-col w-full py-16 px-4">
         {/* Presidents */}
-        <h2 className="section-title text-left font-club">Presidents</h2>
+        <h2 className="section-title font-club text-center sm:text-left">Presidents</h2>
 
-        <div className="flex flex-wrap gap-8 justify-start"> {/* Use gap instead of space-x for wrapping */}
-          <div className="flex flex-col justify-start items-start text-left text-primary-light min-w-[250px] mb-8">
-            <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-pham.png" alt="Daniel Pham" />
+        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
+          
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light min-w-[250px] mb-8">
+            <a href="https://www.linkedin.com/in/daniel-pham-5b4873286/" target="blank_">
+              <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-pham.png" alt="Daniel Pham" />
+            </a>
             <h3 className="text-xl font-semibold text-white mb-4">Daniel Pham</h3>
             <p className="text-gray-300">Co-President</p>
           </div>
-
-          <div className="flex flex-col justify-start items-start text-left text-primary-light min-w-[250px] mb-8">
-            <img className="max-w-[250px] mb-4 rounded-lg" src="tommy.jfif" alt="Tommy Oh" />
+        
+          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+            <a href="https://www.linkedin.com/in/tommy-oh-766450217/" target="blank_">
+              <img className="max-w-[250px] mb-4 rounded-lg" src="tommy.jfif" alt="Tommy Oh" />
+            </a>
             <h3 className="text-xl font-semibold text-white mb-4">Tommy (Kanggeon) Oh</h3>
             <p className="text-gray-300">Co-President</p>
           </div>
+          
         </div>
 
         {/* Directors */}
-        <h2 className="section-title text-left font-club">Directors</h2>
+        <h2 className="section-title font-club text-center sm:text-left">Directors</h2>
 
-        <div className="flex flex-wrap gap-8 justify-start">
-          <div className="flex flex-col justify-start items-start text-left text-primary-light min-w-[250px] mb-8">
-            <img className="max-w-[250px] mb-4 rounded-lg" src="sean.jfif" alt="Sean Wotherspoon" />
+        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
+
+          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+            <a href="https://www.linkedin.com/in/sean-wotherspoon/" target="blank_">
+              <img className="max-w-[250px] mb-4 rounded-lg" src="sean.jfif" alt="Sean Wotherspoon" />
+            </a>
             <h3 className="text-xl font-semibold text-white mb-4">Sean Wotherspoon</h3>
             <p className="text-gray-300 text-center">Director of Technology</p>
           </div>
-
-          <div className="flex flex-col justify-start items-start text-left text-primary-light min-w-[250px] mb-8">
-            <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-ahn.jfif" alt="Daniel Ahn" />
+          
+          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+            <a href="https://www.linkedin.com/in/daniel-pham-5b4873286/" target="blank_">
+              <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-ahn.jfif" alt="Daniel Ahn" />
+            </a>
             <h3 className="text-xl font-semibold text-white mb-4">Daniel Ahn</h3>
             <p className="text-gray-300">Director of Communications</p>
           </div>
+          
 
-          <div className="flex flex-col justify-start items-start text-left text-primary-light min-w-[250px] mb-8">
-            <img className="max-w-[250px] mb-4 rounded-lg" src="image.png" alt="Dhruv Gupta" />
+          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+            <a href="https://www.linkedin.com/in/dhruvgpt/" target="blank_">
+              {/* <img className="max-w-[250px] mb-4 rounded-lg" src="image.png" alt="Dhruv Gupta" /> */}
+              <div className="w-full h-full max-w-[250px] max-h-[250px] mb-4 rounded-lg flex justify-center items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+              </div>
+            </a>
             <h3 className="text-xl font-semibold text-white mb-4">Dhruv Gupta</h3>
             <p className="text-gray-300">Director of Strategy</p>
           </div>
-
-          <div className="flex flex-col justify-start items-start text-left text-primary-light min-w-[250px] mb-8">
-            <img className="max-w-[250px] mb-4 rounded-lg" src="jeeya.jfif" alt="Jeeya Parasbhai Khavadia" />
+          
+          <div className="flex flex-col justify-start sm:items-start text-center text-primary-light min-w-[250px] mb-8">
+            <a href="https://www.linkedin.com/in/jeeya-parasbhai-khavadia-55b243239/" target="blank_">
+              <img className="max-w-[250px] mb-4 rounded-lg" src="jeeya.jfif" alt="Jeeya Parasbhai Khavadia" />
+            </a>
             <h3 className="text-xl font-semibold text-white mb-4">Jeeya Parasbhai Khavadia</h3>
             <p className="text-gray-300">Director of Events</p>
           </div>
+
         </div>
+
       </section>
     </div>
   );
