@@ -30,7 +30,7 @@ const Project: React.FC<ProjectProps> = ({
         </a>
       </div>
       {imgURL && (
-        <div className="md:w-1/2 bg-gray-700 w-full max-w-[325px] flex items-center justify-center mt-8 md:mt-0">
+        <div className="md:w-1/2 w-full max-w-[325px] flex items-center justify-center mt-8 md:mt-0">
           <img src={imgURL} alt={title} className="w-full object-cover rounded-md" />
         </div>
       )}
