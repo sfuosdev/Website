@@ -90,7 +90,7 @@ const Projects = () => {
       </section>
 
       {/* Projects and Beyond Section */}
-      <section id="about" className="container mx-auto flex flex-col w-full py-16 px-4">
+      <section id="about" className="container mx-auto flex flex-col w-full py-16 px-6 sm:px-12">
         <h2 className="section-title text-left font-club">Empowering Developers and Beyond</h2>
 
         {/* Content Wrapper */}
@@ -115,7 +115,7 @@ const Projects = () => {
       </section>
 
       {/* Our Projects Section */}
-      <section id="projects-section" className="container mx-auto px-4 py-12">
+      <section id="projects-section" className="container mx-auto py-12 px-6 sm:px-12">
         <h2 className="section-title text-left font-club">Our Projects</h2>
         <div className="flex space-x-4 mb-8">
           <span className={`px-4 py-2 btn text-center text-white transition duration-300 cursor-pointer ${activeTab === 'ONGOING' ? 'bg-[#D55FFF]' : 'bg-[#636C9E]'}`} onClick={() => setActiveTab('ONGOING')}>ONGOING</span>

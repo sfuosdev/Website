@@ -6,7 +6,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="bg-gradient-2 py-32 flex flex-col justify-center items-start">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6 sm:px-12">
           <h1 className="text-6xl font-bold font-club mb-6 text-white">SFU OS Dev Club</h1>
           <p className="text-xl mb-10 text-white">Join SFU Open Source Development Club and collaborate with tech, design, and business students on projects that make a real impact. Build, learn, and grow together as we drive positive change through technology.</p>
           <a
@@ -19,7 +19,7 @@ const Home = () => {
       </section>
 
       {/* Who Are We Section */}
-      <section id="about" className="container mx-auto flex flex-col w-full py-16 px-4">
+      <section id="about" className="container mx-auto flex flex-col w-full py-16 px-6 sm:px-12">
         <h2 className="section-title text-left font-club">Who We Are</h2>
 
         {/* Content Wrapper */}
@@ -51,7 +51,7 @@ const Home = () => {
       </section>
 
       {/* Our Value to You Section*/}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto py-16 px-6 sm:px-12">
 
         <h2 className="section-title text-center font-club md:text-left">Our Value to You</h2>
 
