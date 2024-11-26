@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { getBasePath } from '../utils/basePath';
 
 const Teams = () => {
+  const basePath = getBasePath();
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [isScrolledLeft, setIsScrolledLeft] = useState(true);
   const [isScrolledRight, setIsScrolledRight] = useState(false);
@@ -52,7 +54,7 @@ const Teams = () => {
           
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/daniel-pham-5b4873286/" target="blank_">
-              <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-pham.png" alt="Daniel Pham" />
+              <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/daniel-pham.png`} alt="Daniel Pham" />
             </a>
             <h3 className="text-xl font-semibold text-white mb-1">Daniel Pham</h3>
             <p className="text-primary-light mb-2">Co-President</p>
@@ -61,7 +63,7 @@ const Teams = () => {
         
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/tommy-oh-766450217/" target="blank_">
-              <img className="max-w-[250px] mb-4 rounded-lg" src="tommy.jfif" alt="Tommy Oh" />
+              <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/tommy.jfif`} alt="Tommy Oh" />
             </a>
             <h3 className="text-xl font-semibold text-white mb-1">Tommy (Kanggeon) Oh</h3>
             <p className="text-primary-light mb-2">Co-President</p>
@@ -77,7 +79,7 @@ const Teams = () => {
 
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/sean-wotherspoon/" target="blank_">
-              <img className="max-w-[250px] mb-4 rounded-lg" src="sean.jfif" alt="Sean Wotherspoon" />
+              <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/sean.jfif`} alt="Sean Wotherspoon" />
             </a>
             <h3 className="text-xl font-semibold text-white mb-1">Sean Wotherspoon</h3>
             <p className="text-primary-light mb-2">Director of Technology</p>
@@ -86,7 +88,7 @@ const Teams = () => {
           
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/daniel-ahn-59b649297/" target="blank_">
-              <img className="max-w-[250px] mb-4 rounded-lg" src="daniel-ahn.jfif" alt="Daniel Ahn" />
+              <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/daniel-ahn.jfif`} alt="Daniel Ahn" />
             </a>
             <h3 className="text-xl font-semibold text-white mb-1">Daniel Ahn</h3>
             <p className="text-primary-light mb-2">Director of Communications</p>
@@ -96,7 +98,7 @@ const Teams = () => {
 
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/dhruvgpt/" target="blank_">
-              {/* <img className="max-w-[250px] mb-4 rounded-lg" src="image.png" alt="Dhruv Gupta" /> */}
+              {/* <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/dhruv-gupta.jfif`} alt="Dhruv Gupta" /> */}
               <div className="w-full h-full max-w-[250px] max-h-[250px] mb-4 rounded-lg flex justify-center items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
                   <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
@@ -110,7 +112,7 @@ const Teams = () => {
           
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/jeeya-parasbhai-khavadia-55b243239/" target="blank_">
-              <img className="max-w-[250px] mb-4 rounded-lg" src="jeeya.jfif" alt="Jeeya Parasbhai Khavadia" />
+              <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/jeeya.jfif`} alt="Jeeya Parasbhai Khavadia" />
             </a>
             <h3 className="text-xl font-semibold text-white mb-1">Jeeya Parasbhai Khavadia</h3>
             <p className="text-primary-light mb-2">Director of Events</p>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Project from './Project'
 import { ProjectType } from '../interfaces/project-type'
+import { getBasePath } from '../utils/basePath';
 
 const onGoingProjectsList: ProjectType[] = [
   {
@@ -45,6 +46,7 @@ const pastProjectsList: ProjectType[] = [
 ];
 
 const Projects = () => {
+  const basePath = getBasePath();
   const [activeTab, setActiveTab] = useState('ONGOING');
 
   const renderProjectsList = () => {
@@ -68,7 +70,7 @@ const Projects = () => {
         key={index}
         title={project.title}
         description={project.description}
-        imgURL={project.imgURL}
+        imgURL={`${basePath}/${project.imgURL}`}
         githubURL={project.githubURL}
       />
     ));
