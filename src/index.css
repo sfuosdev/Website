@@ -38,6 +38,10 @@ body {
   @apply bg-secondary text-white hover:bg-secondary-dark;
 }
 
+.btn-third {
+  @apply bg-primary text-white hover:bg-primary-light;
+}
+
 .section-title {
   @apply text-4xl font-bold mb-8 text-white;
 }
