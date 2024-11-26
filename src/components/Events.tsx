@@ -9,7 +9,7 @@ const pastEventsList: EventType[] = [
 ];
 
 const Events = () => {
-  const [activeTab, setActiveTab] = useState('UPCOMING');
+  const [activeTab, setActiveTab] = useState('PAST');
 
   const renderEventsList = () => {
     let eventsList = [];
