@@ -1,3 +1,3 @@
 export const getBasePath = () => {
-    return import.meta.env.MODE === 'production' ? '/Website' : '';
+    return import.meta.env.MODE === 'production' ? '' : '';
 };
