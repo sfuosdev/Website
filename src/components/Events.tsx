@@ -6,6 +6,34 @@ const upcomingEventsList: EventType[] = [
 ];
 
 const pastEventsList: EventType[] = [
+  {
+    title: "Fall 2024 Icebreaker Event",
+    description: "At the beginning of the Fall 2024 semester, the we hosted an amazing icebreaker event to kick off the semester! We introduced the club, our executives, shared our vision, and highlighted exciting projects we'll be working on this term. Our project leads gave insightful presentations, sparking enthusiasm among attendees. It was fantastic to welcome so many passionate students eager to dive into open-source development. The pizza and drinks were a hit, making the evening even more memorable!",
+    imgURLs: [
+      "events/f24-icebreaker-1.jpg",
+      "events/f24-icebreaker-2.jpg",
+      "events/f24-icebreaker-3.jpg",
+      "events/f24-icebreaker-4.jpg",
+      "events/f24-icebreaker-5.jpg",
+      "events/f24-icebreaker-6.jpg",
+    ],
+  },
+  {
+    title: "March Speaker Series",
+    description: "The March Speaker Series was a fantastic success! We were thrilled to host guest speaker David Hobbs, who shared invaluable industry insights and actionable career tips with our members. His engaging session left attendees inspired and motivated as they plan their career journeys. A heartfelt thank you to everyone who joined us and made this event so special!",
+    imgURLs: [
+      "events/mar-speaker-series-1.jpg",
+    ],
+  },
+  {
+    title: "February Speaker Series",
+    description: "The February Speaker Series was an incredible experience! We were honored to host Charles Tong, who shared valuable insights into the intersection of Tech and Business. His engaging talk provided our members with fresh perspectives and practical knowledge to apply in their journeys. A big thank you to everyone who attended and contributed thoughtful questions, making the event even more impactful. The energy and enthusiasm of our members makes these events so special!",
+    imgURLs: [
+      "events/feb-speaker-series-1.jpg",
+      "events/feb-speaker-series-2.jpg",
+      "events/feb-speaker-series-3.jpg"
+    ],
+  }
 ];
 
 const Events = () => {
@@ -32,7 +60,7 @@ const Events = () => {
         key={index}
         title={event.title}
         description={event.description}
-        imgURL={event.imgURL}
+        imgURLs={event.imgURLs}
       />
     ));
   };
@@ -67,7 +95,7 @@ const Events = () => {
 
           {/* Right Side (button links) */}
           <div className="md:w-1/2 flex flex-col items-start md:items-end space-y-6">
-            <a href="#projects-section" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300" onClick={() => setActiveTab('ONGOING')}>
+            <a href="#projects-section" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300" onClick={() => setActiveTab('UPCOMING')}>
               <p className="mr-4">&gt;</p>./UPCOMING_EVENTS
             </a>
             <a href="#projects-section" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300" onClick={() => setActiveTab('PAST')}>
@@ -81,7 +109,7 @@ const Events = () => {
       <section id="projects-section" className="container mx-auto py-12 px-6 sm:px-12">
         <h2 className="section-title text-left font-club">Our Events</h2>
         <div className="flex space-x-4 mb-8">
-          <span className={`px-4 py-2 btn text-center text-white transition duration-300 cursor-pointer ${activeTab === 'UPCOMING' ? 'bg-[#D55FFF]' : 'bg-[#636C9E]'}`} onClick={() => setActiveTab('UPCOMING')}>ONGOING</span>
+          <span className={`px-4 py-2 btn text-center text-white transition duration-300 cursor-pointer ${activeTab === 'UPCOMING' ? 'bg-[#D55FFF]' : 'bg-[#636C9E]'}`} onClick={() => setActiveTab('UPCOMING')}>UPCOMING</span>
           <span className={`px-4 py-2 btn text-center text-white transition duration-300 cursor-pointer ${activeTab === 'PAST' ? 'bg-[#D55FFF]' : 'bg-[#636C9E]'}`} onClick={() => setActiveTab('PAST')}>PAST</span>
         </div>
 
