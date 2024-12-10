@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
   return (
@@ -36,15 +38,15 @@ const Home = () => {
 
           {/* Right Side (button links) */}
           <div className="md:w-1/2 flex flex-col items-start md:items-end space-y-6">
-            <a href="/projects" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300">
+            <Link to="/projects" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300">
               <p className="mr-4">&gt;</p>./PROJECTS
-            </a>
-            <a href="/events" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300">
+            </Link>
+            <Link to="/events" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300">
               <p className="mr-4">&gt;</p>./EVENTS
-            </a>
-            <a href="/teams" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300">
+            </Link>
+            <Link to="/teams" className="flex flex-row px-4 py-2 rounded w-full max-w-[325px] btn btn-primary text-left text-white transition duration-300">
               <p className="mr-4">&gt;</p>./TEAMS
-            </a>
+            </Link>
           </div>
         </div>
         
