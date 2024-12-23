@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { getBasePath } from '../utils/basePath';
 
 const Header = () => {
   const basePath = getBasePath();
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -13,6 +14,10 @@ const Header = () => {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
 
   return (
     <div className="relative">
