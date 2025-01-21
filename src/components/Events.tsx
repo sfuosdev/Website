@@ -79,7 +79,6 @@ const Events = () => {
           </a>
         </div>
       </section>
-
       {/* Projects and Beyond Section */}
       <section id="about" className="container mx-auto flex flex-col w-full py-16 px-6 sm:px-12">
         <h2 className="section-title text-left font-club">We Touch Grass. We Meet People.</h2>
@@ -131,7 +130,7 @@ const Events = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Events
+export default Events;

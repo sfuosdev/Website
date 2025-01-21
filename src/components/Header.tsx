@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { getBasePath } from '../utils/basePath';
 
 const Header = () => {
+  const basePath = getBasePath();
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const openMenu = () => {
     setMenuOpen(true);
@@ -11,6 +14,10 @@ const Header = () => {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname]);
 
   return (
     <div className="relative">
@@ -46,7 +53,7 @@ const Header = () => {
 
         {/* Centered Club Logo */}
         <Link to="/" className="flex-shrink-0 mx-auto md:flex md:mx-0">
-          <img src="/oslogo_transparent.svg" alt="SFU OS Dev Club Logo" className="h-10 w-10 md:h-12 md:w-12" />
+          <img src={`${basePath}/oslogo_transparent.svg`} alt="SFU OS Dev Club Logo" className="h-10 w-10 md:h-12 md:w-12" />
         </Link>
 
         {/* Empty Div for spacing on right side on small screens */}
