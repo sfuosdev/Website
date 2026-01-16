@@ -5,7 +5,10 @@ const Home = () => {
   return (
     <div className="mt-[60px] md:mt-[80px]">
       {/* Hero Section */}
-      <section className="bg-gradient-2 py-32 flex flex-col justify-center items-start">
+      <section
+        className="py-32 flex flex-col justify-center items-start bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/background/home.png')" }}
+      >
         <div className="container mx-auto px-6 sm:px-12">
           <h1 className="text-6xl font-bold font-club mb-6 text-white">
             SFU OS Dev Club

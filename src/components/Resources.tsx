@@ -1,11 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Github, FileText } from "lucide-react";
 
 const Resources = () => {
   return (
     <div className="mt-[60px] md:mt-[80px]">
       {/* Hero Section */}
-      <section className="bg-gradient-2 py-32 flex flex-col justify-center items-start">
+      <section
+        className="py-32 flex flex-col justify-center items-start bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/background/resource.png')" }}
+      >
         <div className="container mx-auto px-6 sm:px-12">
           <h1 className="text-6xl font-bold font-club mb-6 text-white">
             Resources
@@ -112,7 +116,7 @@ const Resources = () => {
                   viewBox="0 0 16 16"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5m6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5z"
                   />
                 </svg>
@@ -120,22 +124,43 @@ const Resources = () => {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Join Us CTA Banner Section */}
-      <section className="py-24 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold font-club mb-6 text-white">
-            Start Your Journey With Us
-          </h2>
-          <div className="flex justify-center">
-            <a
-              href="https://go.sfss.ca/clubs/867/info"
-              className="flex flex-row px-4 py-2 rounded w-full max-w-[255px] btn btn-primary text-left text-white transition duration-300"
+          <div className="flex-1 space-y-6">
+            <h2 className="section-title text-center font-club">
+              Submit Forms
+            </h2>
+            <Link
+              to="/forms/executive"
+              className="flex items-center justify-center btn btn-third w-full md:w-1/2 mx-auto"
             >
-              <p className="mr-4">&gt;</p>./START_UR_JOURNEY
-            </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                className="bi bi-file-earmark-fill mr-2"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z" />
+              </svg>
+              Executive Application
+            </Link>
+
+            <Link
+              to="/forms/project-proposal"
+              className="flex items-center justify-center btn btn-third w-full md:w-1/2 mx-auto"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                className="bi bi-file-earmark-fill mr-2"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z" />
+              </svg>
+              Project Proposal
+            </Link>
           </div>
         </div>
       </section>
