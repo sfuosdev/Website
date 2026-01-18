@@ -108,10 +108,9 @@ const Teams = () => {
           </div>
         </div>
 
-        {/* Directors */}
-        <h2 className="section-title font-club text-center sm:text-left">
-          Directors
-        </h2>
+        <h3 className="text-3xl font-bold text-center sm:text-left mb-8 text-white font-club">
+          Technology Team
+        </h3>
 
         <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
@@ -134,7 +133,13 @@ const Teams = () => {
               and high-quality standards in club projects.
             </p>
           </div>
+        </div>
 
+        <h3 className="text-3xl font-bold text-center sm:text-left mt-12 mb-8 text-white font-club">
+          Strategy Team
+        </h3>
+
+        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/dhruvgpt/" target="blank_">
               {/* <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/dhruv-gupta.jfif`} alt="Dhruv Gupta" /> */}
@@ -161,10 +166,14 @@ const Teams = () => {
             </p>
           </div>
         </div>
-        {/* Directors */}
-        <h2 className="section-title font-club text-center sm:text-left">
-          Coordinators
-        </h2>
+
+        <h3 className="text-3xl font-bold text-center sm:text-left mt-12 mb-8 text-white font-club">
+          Event Team
+        </h3>
+
+        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
+          {/* Add Event Team members here */}
+        </div>
       </section>
     </div>
   );

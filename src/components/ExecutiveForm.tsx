@@ -3,8 +3,11 @@ import { FormData } from "../interfaces/exec-form-data-type";
 import TechnologyQuestions from "./forms/TechnologyQuestions";
 import StrategyQuestions from "./forms/StrategyQuestions";
 import EventQuestions from "./forms/EventQuestions";
+import axios from "axios";
 
 const ExecutiveForm = () => {
+  const endpoint =
+    import.meta.env.VITE_ENDPOINT || import.meta.env.VITE_LOCAL_ENDPOINT || "";
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
@@ -52,8 +55,19 @@ const ExecutiveForm = () => {
     );
 
     if (isConfirmed) {
+      axios
+        .post(endpoint + "/api/submit/exec-form", formData)
+        .then(() => {
+          alert("Application submitted successfully!");
+        })
+        .catch((error) => {
+          console.error("Error submitting application:", error);
+          alert(
+            "There was an error submitting your application. Please try again."
+          );
+        });
+
       console.log(JSON.stringify(formData, null, 2));
-      alert("Application submitted! Check console for JSON.");
     }
   };
 

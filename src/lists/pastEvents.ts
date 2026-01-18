@@ -2,6 +2,20 @@ import { EventType } from "../interfaces/event-type";
 
 export const pastEventsList: EventType[] = [
   {
+    title: "Fall 2025 Catalyst Event",
+    description:
+      'Concluding the Fall 2025 semester, the OS Dev Club hosted "Catalyst," a collaborative case competition held in partnership with the Charles Chang Institute for Entrepreneurship and Moment Energy. The event focused on addressing key challenges within the renewable energy sector, drawing over 80 students from various academic backgrounds. Participants were tasked with research-based prompts to develop innovative solutions for real-world energy problems. The competition concluded with students pitching their ideas to a panel of industry experts, effectively bridging the gap between classroom learning and practical applications in clean technology.',
+    imgURLs: [
+      "events/catalyst/f25-catalyst-3.jpeg",
+      "events/catalyst/f25-catalyst-2.jpeg",
+      "events/catalyst/f25-catalyst-1.jpeg",
+      "events/catalyst/f25-catalyst-4.jpeg",
+      "events/catalyst/f25-catalyst-5.jpeg",
+      "events/catalyst/f25-catalyst-6.jpeg",
+    ],
+  },
+
+  {
     title: "Fall 2024 Icebreaker Event",
     description:
       "At the beginning of the Fall 2024 semester, the we hosted an amazing icebreaker event to kick off the semester! We introduced the club, our executives, shared our vision, and highlighted exciting projects we'll be working on this term. Our project leads gave insightful presentations, sparking enthusiasm among attendees. It was fantastic to welcome so many passionate students eager to dive into open-source development. The pizza and drinks were a hit, making the evening even more memorable!",
