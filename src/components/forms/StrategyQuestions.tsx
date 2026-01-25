@@ -87,7 +87,7 @@ const StrategyQuestions: React.FC<StrategyQuestionsProps> = ({
           className="block text-gray-700 text-sm font-bold mb-2"
           htmlFor="strat-q5"
         >
-          Can you be in-person if there is in-persion events ongoing?{" "}
+          Can you be in-person if there is in-person events ongoing?{" "}
           <span className="text-red-500">*</span>
         </label>
         <select

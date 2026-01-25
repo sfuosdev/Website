@@ -106,4 +106,8 @@ There are buttons for executive application and project proposal application.
 
 #### Executive application
 
-The general question such as full name, SFU email, etc
+The general question such as full name, SFU email, etc are required to input. This section can be edit in `ExecutiveForm.tsx` in `src/components` folder.
+
+`ExecutiveForm.tsx` contains the common questions such as asking full name, major, email, etc.
+
+Team-based questions can be found in `src/components/forms` folder.
