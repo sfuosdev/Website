@@ -34,7 +34,10 @@ const Teams = () => {
   return (
     <div className="mt-[60px] md:mt-[80px]">
       {/* Hero Section */}
-      <section className="bg-gradient-2 py-32 flex flex-col justify-center items-start">
+      <section
+        className="py-32 flex flex-col justify-center items-start bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/background/project.png')" }}
+      >
         <div className="container mx-auto px-6 sm:px-12">
           <h1 className="text-6xl font-bold font-club mb-6 text-white">
             Meet Our Executive Team
@@ -64,52 +67,50 @@ const Teams = () => {
         <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a
-              href="https://www.linkedin.com/in/daniel-pham-5b4873286/"
+              href="https://www.linkedin.com/in/tommykanggeon-oh/"
               target="blank_"
             >
               <img
                 className="max-w-[250px] mb-4 rounded-lg"
-                src={`${basePath}/daniel-pham.png`}
-                alt="Daniel Pham"
-              />
-            </a>
-            <h3 className="text-xl font-semibold text-white mb-1">
-              Daniel Pham
-            </h3>
-            <p className="text-primary-light mb-2">Co-President</p>
-            <p className="text-gray-300 text-sm">
-              Daniel brings a deep commitment to open-source software and
-              business, aiming to empower students to contribute to impactful
-              projects.
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
-            <a
-              href="https://www.linkedin.com/in/tommy-oh-766450217/"
-              target="blank_"
-            >
-              <img
-                className="max-w-[250px] mb-4 rounded-lg"
-                src={`${basePath}/tommy.jfif`}
+                src={`${basePath}/execs/tommy.jfif`}
                 alt="Tommy Oh"
               />
             </a>
-            <h3 className="text-xl font-semibold text-white mb-1">
-              Tommy (Kanggeon) Oh
-            </h3>
+            <h3 className="text-xl font-semibold text-white mb-1">Tommy Oh</h3>
             <p className="text-primary-light mb-2">Co-President</p>
             <p className="text-gray-300 text-sm">
               With a passion for technology and community, Tommy focuses on
               creating an inclusive space for developers of all levels at SFU.
             </p>
           </div>
+
+          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
+            <a href="https://www.linkedin.com/in/yoonyou12/" target="blank_">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100%"
+                height="100%"
+                fill="currentColor"
+                className="bi bi-person-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+              </svg>
+            </a>
+            <h3 className="text-xl font-semibold text-white mb-1">
+              Yoonsang You
+            </h3>
+            <p className="text-primary-light mb-2">Co-President</p>
+            <p className="text-gray-300 text-sm">
+              Yoonsang is dedicated to fostering collaboration and innovation
+              within the SFU developer community through open-source projects.
+            </p>
+          </div>
         </div>
 
-        {/* Directors */}
-        <h2 className="section-title font-club text-center sm:text-left">
-          Directors
-        </h2>
+        <h3 className="text-3xl font-bold text-center sm:text-left mb-8 text-white font-club">
+          Technology Team
+        </h3>
 
         <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
@@ -119,7 +120,7 @@ const Teams = () => {
             >
               <img
                 className="max-w-[250px] mb-4 rounded-lg"
-                src={`${basePath}/sean.jfif`}
+                src={`${basePath}/execs/sean.jfif`}
                 alt="Sean Wotherspoon"
               />
             </a>
@@ -132,30 +133,13 @@ const Teams = () => {
               and high-quality standards in club projects.
             </p>
           </div>
+        </div>
 
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
-            <a
-              href="https://www.linkedin.com/in/daniel-ahn-59b649297/"
-              target="blank_"
-            >
-              <img
-                className="max-w-[250px] mb-4 rounded-lg"
-                src={`${basePath}/daniel-ahn.jfif`}
-                alt="Daniel Ahn"
-              />
-            </a>
-            <h3 className="text-xl font-semibold text-white mb-1">
-              Daniel Ahn
-            </h3>
-            <p className="text-primary-light mb-2">
-              Director of Communications
-            </p>
-            <p className="text-gray-300 text-sm">
-              Daniel oversees all communications, helping to keep the community
-              informed and engaged in upcoming events.
-            </p>
-          </div>
+        <h3 className="text-3xl font-bold text-center sm:text-left mt-12 mb-8 text-white font-club">
+          Strategy Team
+        </h3>
 
+        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
           <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
             <a href="https://www.linkedin.com/in/dhruvgpt/" target="blank_">
               {/* <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/dhruv-gupta.jfif`} alt="Dhruv Gupta" /> */}
@@ -181,44 +165,14 @@ const Teams = () => {
               growth and sustainability for future initiatives.
             </p>
           </div>
-
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
-            <a
-              href="https://www.linkedin.com/in/jeeya-parasbhai-khavadia-55b243239/"
-              target="blank_"
-            >
-              <img
-                className="max-w-[250px] mb-4 rounded-lg"
-                src={`${basePath}/jeeya.jfif`}
-                alt="Jeeya Parasbhai Khavadia"
-              />
-            </a>
-            <h3 className="text-xl font-semibold text-white mb-1">
-              Jeeya Parasbhai Khavadia
-            </h3>
-            <p className="text-primary-light mb-2">Director of Events</p>
-            <p className="text-gray-300 text-sm">
-              Jeeya plans and organizes events that bring members together to
-              learn, network, and build impactful projects.
-            </p>
-          </div>
         </div>
-      </section>
 
-      {/* Join Us CTA Banner Section */}
-      <section className="py-24 text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold font-club mb-6 text-white">
-            Start Your Journey With Us
-          </h2>
-          <div className="flex justify-center">
-            <a
-              href="https://go.sfss.ca/clubs/867/info"
-              className="flex flex-row px-4 py-2 rounded w-full max-w-[255px] btn btn-primary text-left text-white transition duration-300"
-            >
-              <p className="mr-4">&gt;</p>./START_UR_JOURNEY
-            </a>
-          </div>
+        <h3 className="text-3xl font-bold text-center sm:text-left mt-12 mb-8 text-white font-club">
+          Event Team
+        </h3>
+
+        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
+          {/* Add Event Team members here */}
         </div>
       </section>
     </div>
