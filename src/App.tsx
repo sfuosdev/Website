@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Resources from "./components/Resources";
 import ExecutiveForm from "./components/ExecutiveForm";
 import ProjectProposalForm from "./components/ProjectProposalForm";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               path="/forms/project-proposal"
               element={<ProjectProposalForm />}
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
