@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const handleSocialClick = (platform: string, url: string) => {
@@ -9,10 +10,27 @@ const Footer = () => {
   return (
     <footer className="bg-background-header text-white">
       {/* Upper Footer Container */}
-      <div className="container mx-auto px-6 py-8 flex justify-between items-center">
-        <h2 className="text-xl font-club font-bold">
-          @SFU Open Source Development Club
-        </h2>
+      <div className="container mx-auto px-6 py-10 flex flex-col gap-8 md:flex-row md:justify-between md:items-center">
+        <div>
+          <h2 className="text-xl font-club font-bold">
+            @SFU Open Source Development Club
+          </h2>
+          <p className="mt-2 text-gray-300">
+            Have a question or want to collaborate?
+          </p>
+          <a
+            href="mailto:sfuosdev@gmail.com"
+            className="mt-2 inline-block text-secondary-light hover:text-white transition-colors"
+          >
+            Contact us: sfuosdev@gmail.com
+          </a>
+          <Link
+            to="/executives"
+            className="mt-2 block text-secondary-light hover:text-white transition-colors"
+          >
+            Meet our executives
+          </Link>
+        </div>
 
         <div className="w-16 grid grid-cols-2 gap-3 md:w-[148px] md:flex md:flex-row md:justify-center">
           <button

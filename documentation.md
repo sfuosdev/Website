@@ -36,7 +36,7 @@ function App() {
 
 ## Sections
 
-There are 5 sections / page in our club website: About us, Projects, Events, Teams, Resources.
+There are 6 sections / pages in our club website: About us, Projects, Events, Executives, Resources, and Contact Us.
 
 ### About us page
 
@@ -94,9 +94,9 @@ export const upcomingEventsList: EventType[] = [
 ];
 ```
 
-### Team page
+### Executive page
 
-Teams page is the page that displays of our club executives.
+The Executives page displays the current club executive roster, organized by team. Executive email and phone fields are included on each profile; private phone numbers are not published unless provided by the executive.
 
 ### Resource Page
 
