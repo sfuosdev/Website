@@ -1,7 +1,8 @@
+import type { FormData } from "../../interfaces/exec-form-data-type";
 import React from "react";
 
 interface TechnologyQuestionsProps {
-  formData: any;
+  formData: FormData;
   handleChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;

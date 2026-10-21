@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import React from "react";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> Stashed changes
 
 const Footer = () => {
   const handleSocialClick = (platform: string, url: string) => {

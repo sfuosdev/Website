@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import React, { useEffect, useRef, useState } from "react";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> Stashed changes
 import { getBasePath } from "../utils/basePath";
 
 const Teams = () => {
