@@ -32,7 +32,7 @@ This website has those sections:
 - About us
 - Projects
 - Events
-- Teams
+- Executives
 - Resources
 
 ### SFU OS Dev Social Media

@@ -2,6 +2,21 @@ import { EventType } from "../interfaces/event-type";
 
 export const pastEventsList: EventType[] = [
   {
+    title: "Fall 2026 Icebreaker Event",
+    description:
+      "The Fall 2026 Icebreaker brought students together to learn about SFU Open Source Development Club, meet the executive team, and explore the new projects planned for the semester. The event included project presentations, team formation, networking, and opportunities to contribute to collaborative open-source development.",
+    imgURLs: [
+      "events/fall-2026-icebreaker-1.jpg",
+      "events/fall-2026-icebreaker-2.jpg",
+    ],
+  },
+  {
+    title: "Summer 2026 Icebreaker Event",
+    description:
+      "The Summer 2026 Icebreaker introduced the SFU Open Source Development Club's vision for building a collaborative open-source community at SFU. Co-Presidents Yoonsang You and Bedro Park shared the club's goals of helping students learn together, contribute to real-world projects, and grow as developers beyond their coursework. Attendees learned about upcoming initiatives, including a resume workshop and future collaborations with technology companies, while connecting over their interests and future open-source projects.",
+    imgURLs: ["events/summer-2026-icebreaker.jpg"],
+  },
+  {
     title: "Fall 2025 Catalyst Event",
     description:
       'Concluding the Fall 2025 semester, the OS Dev Club hosted "Catalyst," a collaborative case competition held in partnership with the Charles Chang Institute for Entrepreneurship and Moment Energy. The event focused on addressing key challenges within the renewable energy sector, drawing over 80 students from various academic backgrounds. Participants were tasked with research-based prompts to develop innovative solutions for real-world energy problems. The competition concluded with students pitching their ideas to a panel of industry experts, effectively bridging the gap between classroom learning and practical applications in clean technology.',

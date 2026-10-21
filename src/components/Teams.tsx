@@ -1,179 +1,190 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import { getBasePath } from "../utils/basePath";
+
+type Executive = {
+  name: string;
+  role: string;
+  team: string;
+  description: string;
+  photo: string;
+  photoPosition?: string;
+  email: string;
+  phone: string;
+  linkedin?: string;
+};
+
+const executives: Executive[] = [
+  {
+    name: "Bedro Park",
+    role: "Co-President",
+    team: "Presidents",
+    description:
+      "Bedro helps guide the club's vision and build innovative open-source projects for the SFU community.",
+    photo: "bedro-park.jpg",
+    email: "bpa51@sfu.ca",
+    phone: "236-512-4485",
+  },
+  {
+    name: "Yoonsang You",
+    role: "Co-President",
+    team: "Presidents",
+    description:
+      "Yoonsang helps foster collaboration and innovation across the SFU developer community.",
+    photo: "yoonsang-you.jpg",
+    email: "yya270@sfu.ca",
+    phone: "778-899-2628",
+    linkedin: "https://www.linkedin.com/in/yoonyou12/",
+  },
+  {
+    name: "Hyunsoo Cho",
+    role: "Technology Coordinator",
+    team: "Technology Team",
+    description:
+      "Hyunsoo leads the club's technical direction and supports members as they build high-quality open-source projects.",
+    photo: "mehrab-uddin.jpg",
+    photoPosition: "center 30%",
+    email: "hsc32@sfu.ca",
+    phone: "778-862-7857",
+  },
+  {
+    name: "Mehrab Uddin",
+    role: "Technology Coordinator",
+    team: "Technology Team",
+    description:
+      "Mehrab coordinates technology initiatives and helps project teams turn ideas into working software.",
+    photo: "hyunsoo-cho.jpg",
+    photoPosition: "center 30%",
+    email: "mua13@sfu.ca",
+    phone: "236-688-5061",
+  },
+  {
+    name: "Monir Fathalla",
+    role: "Strategy Lead",
+    team: "Strategy Team",
+    description:
+      "Monir develops strategic initiatives that support the club's growth and long-term impact.",
+    photo: "monir-fathalla.jpg",
+    email: "mfa95@sfu.ca",
+    phone: "604-367-4947",
+  },
+  {
+    name: "Elisha Kang",
+    role: "Director of Event / Communication",
+    team: "Events & Marketing Team",
+    description:
+      "Elisha leads events and marketing initiatives that bring the SFU open-source community together.",
+    photo: "elisha-kang.jpg",
+    email: "eck6@sfu.ca",
+    phone: "778-522-2614",
+  },
+];
+
+const teamOrder = [
+  "Presidents",
+  "Technology Team",
+  "Strategy Team",
+  "Events & Marketing Team",
+];
 
 const Teams = () => {
   const basePath = getBasePath();
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-  const [isScrolledLeft, setIsScrolledLeft] = useState(true);
-  const [isScrolledRight, setIsScrolledRight] = useState(false);
-
-  const scrollLeft = () => {
-    scrollContainerRef.current?.scrollBy({ left: -300, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    scrollContainerRef.current?.scrollBy({ left: 300, behavior: "smooth" });
-  };
-
-  const handleScroll = () => {
-    const { scrollLeft, scrollWidth, clientWidth } =
-      scrollContainerRef.current!;
-    setIsScrolledLeft(scrollLeft === 0);
-    setIsScrolledRight(scrollLeft + clientWidth >= scrollWidth);
-  };
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener("scroll", handleScroll);
-      handleScroll(); // Initial check
-    }
-    return () => container?.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="mt-[60px] md:mt-[80px]">
-      {/* Hero Section */}
       <section
-        className="py-32 flex flex-col justify-center items-start bg-cover bg-center bg-no-repeat"
+        className="flex flex-col items-start justify-center bg-cover bg-center bg-no-repeat py-32"
         style={{ backgroundImage: "url('/background/project.png')" }}
       >
         <div className="container mx-auto px-6 sm:px-12">
-          <h1 className="text-6xl font-bold font-club mb-6 text-white">
+          <h1 className="mb-6 text-6xl font-bold font-club text-white">
             Meet Our Executive Team
           </h1>
-          <p className="text-xl mb-10 text-white">
+          <p className="mb-10 text-xl text-white">
             Get to know the passionate leaders driving innovation and
-            collaboration at SFU Open Source Development Club. Our executive
-            team is dedicated to empowering students, fostering open-source
-            contributions, and building a vibrant developer community at SFU.
+            collaboration at SFU Open Source Development Club.
           </p>
-          <a
-            href="/"
-            className="btn btn-primary flex flex-row px-4 py-2 rounded w-56 text-white transition duration-300"
+          <Link
+            to="/"
+            className="btn btn-primary flex w-56 flex-row rounded px-4 py-2 text-white transition duration-300"
           >
-            <p className="mr-4">&gt;</p>./HOME
-          </a>
+            <span className="mr-4">&gt;</span>./HOME
+          </Link>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="container mx-auto flex flex-col w-full py-16 px-6 sm:px-12">
-        {/* Presidents */}
-        <h2 className="section-title font-club text-center sm:text-left">
-          Presidents
+      <section className="container mx-auto flex w-full flex-col px-6 py-16 sm:px-12">
+        <h2 className="section-title text-center font-club sm:text-left">
+          Executive Profiles
         </h2>
 
-        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
-            <a
-              href="https://www.linkedin.com/in/tommykanggeon-oh/"
-              target="blank_"
-            >
-              <img
-                className="max-w-[250px] mb-4 rounded-lg"
-                src={`${basePath}/execs/tommy.jfif`}
-                alt="Tommy Oh"
-              />
-            </a>
-            <h3 className="text-xl font-semibold text-white mb-1">Tommy Oh</h3>
-            <p className="text-primary-light mb-2">Co-President</p>
-            <p className="text-gray-300 text-sm">
-              With a passion for technology and community, Tommy focuses on
-              creating an inclusive space for developers of all levels at SFU.
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
-            <a href="https://www.linkedin.com/in/yoonyou12/" target="blank_">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                height="100%"
-                fill="currentColor"
-                className="bi bi-person-fill"
-                viewBox="0 0 16 16"
-              >
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-              </svg>
-            </a>
-            <h3 className="text-xl font-semibold text-white mb-1">
-              Yoonsang You
+        {teamOrder.map((team) => (
+          <section key={team} className="mb-10">
+            <h3 className="mb-8 text-center text-3xl font-bold font-club text-white sm:text-left">
+              {team}
             </h3>
-            <p className="text-primary-light mb-2">Co-President</p>
-            <p className="text-gray-300 text-sm">
-              Yoonsang is dedicated to fostering collaboration and innovation
-              within the SFU developer community through open-source projects.
-            </p>
-          </div>
-        </div>
-
-        <h3 className="text-3xl font-bold text-center sm:text-left mb-8 text-white font-club">
-          Technology Team
-        </h3>
-
-        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
-            <a
-              href="https://www.linkedin.com/in/sean-wotherspoon/"
-              target="blank_"
-            >
-              <img
-                className="max-w-[250px] mb-4 rounded-lg"
-                src={`${basePath}/execs/sean.jfif`}
-                alt="Sean Wotherspoon"
-              />
-            </a>
-            <h3 className="text-xl font-semibold text-white mb-1">
-              Sean Wotherspoon
-            </h3>
-            <p className="text-primary-light mb-2">Director of Technology</p>
-            <p className="text-gray-300 text-sm">
-              Sean leads the technical direction, ensuring innovative solutions
-              and high-quality standards in club projects.
-            </p>
-          </div>
-        </div>
-
-        <h3 className="text-3xl font-bold text-center sm:text-left mt-12 mb-8 text-white font-club">
-          Strategy Team
-        </h3>
-
-        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
-          <div className="flex flex-col justify-start sm:items-start text-center sm:text-left text-primary-light w-[250px] mb-8">
-            <a href="https://www.linkedin.com/in/dhruvgpt/" target="blank_">
-              {/* <img className="max-w-[250px] mb-4 rounded-lg" src={`${basePath}/dhruv-gupta.jfif`} alt="Dhruv Gupta" /> */}
-              <div className="w-full h-full max-w-[250px] max-h-[250px] mb-4 rounded-lg flex justify-center items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="100%"
-                  height="100%"
-                  fill="currentColor"
-                  className="bi bi-person-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                </svg>
-              </div>
-            </a>
-            <h3 className="text-xl font-semibold text-white mb-1">
-              Dhruv Gupta
-            </h3>
-            <p className="text-primary-light mb-2">Director of Strategy</p>
-            <p className="text-gray-300 text-sm">
-              Dhruv develops and executes the club's strategic plans, driving
-              growth and sustainability for future initiatives.
-            </p>
-          </div>
-        </div>
-
-        <h3 className="text-3xl font-bold text-center sm:text-left mt-12 mb-8 text-white font-club">
-          Event Team
-        </h3>
-
-        <div className="flex flex-wrap gap-8 justify-center sm:justify-start">
-          {/* Add Event Team members here */}
-        </div>
+            <div className="flex flex-wrap justify-center gap-8 sm:justify-start">
+              {executives
+                .filter((executive) => executive.team === team)
+                .map((executive) => (
+                  <article
+                    key={executive.name}
+                    className="flex w-[250px] flex-col text-center text-primary-light sm:items-start sm:text-left"
+                  >
+                    {executive.linkedin ? (
+                      <a
+                        href={executive.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`View ${executive.name}'s LinkedIn profile`}
+                      >
+                        <img
+                          className="mb-4 h-[250px] w-full max-w-[250px] rounded-lg object-cover"
+                          style={{ objectPosition: executive.photoPosition }}
+                          src={`${basePath}/execs/${executive.photo}`}
+                          alt={executive.name}
+                        />
+                      </a>
+                    ) : (
+                      <img
+                        className="mb-4 h-[250px] w-full max-w-[250px] rounded-lg object-cover"
+                        style={{ objectPosition: executive.photoPosition }}
+                        src={`${basePath}/execs/${executive.photo}`}
+                        alt={executive.name}
+                      />
+                    )}
+                    <h4 className="mb-1 text-xl font-semibold text-white">
+                      {executive.name}
+                    </h4>
+                    <p className="mb-2 text-primary-light">{executive.role}</p>
+                    <p className="text-sm text-gray-300">
+                      {executive.description}
+                    </p>
+                    <div className="mt-4 w-full border-t border-white/20 pt-3 text-sm text-gray-300">
+                      <p>
+                        <span className="font-semibold text-white">Email:</span>{" "}
+                        <a
+                          href={`mailto:${executive.email}`}
+                          className="hover:text-white"
+                        >
+                          {executive.email}
+                        </a>
+                      </p>
+                      <p className="mt-1">
+                        <span className="font-semibold text-white">Phone:</span>{" "}
+                        <a
+                          href={`tel:${executive.phone}`}
+                          className="hover:text-white"
+                        >
+                          {executive.phone}
+                        </a>
+                      </p>
+                    </div>
+                  </article>
+                ))}
+            </div>
+          </section>
+        ))}
       </section>
     </div>
   );
