@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FormData } from "../interfaces/exec-form-data-type";
 import TechnologyQuestions from "./forms/TechnologyQuestions";
-import StrategyQuestions from "./forms/StrategyQuestions";
 import EventQuestions from "./forms/EventQuestions";
 import axios from "axios";
 
@@ -79,15 +78,16 @@ const ExecutiveForm = () => {
 
       {/* Role Descriptions */}
       <div className="max-w-4xl mx-auto mb-12 text-white">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
             <h3 className="text-xl font-bold mb-2 text-blue-400">
               Technology Team
             </h3>
             <p className="text-sm text-gray-300 mb-4">
               Responsible for developing and maintaining the club's website,
-              projects, and technical workshops. Ideal for those passionate
-              about coding and software development.
+              projects, and technical workshops, alongside club growth,
+              partnerships, and long-term planning. Ideal for those interested
+              in coding, business development, marketing, and leadership.
             </p>
             <div className="text-sm text-gray-300">
               <p className="font-semibold mb-1">Good to have:</p>
@@ -95,24 +95,8 @@ const ExecutiveForm = () => {
                 <li>Experience with React, TypeScript, or Python</li>
                 <li>Knowledge of Git/GitHub</li>
                 <li>Previous project experience</li>
-              </ul>
-            </div>
-          </div>
-          <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
-            <h3 className="text-xl font-bold mb-2 text-green-400">
-              Strategy Team
-            </h3>
-            <p className="text-sm text-gray-300 mb-4">
-              Focuses on club growth, partnerships, and long-term planning.
-              Great for those interested in business development, marketing, and
-              leadership.
-            </p>
-            <div className="text-sm text-gray-300">
-              <p className="font-semibold mb-1">Good to have:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Strong communication skills</li>
-                <li>Interest in marketing or finance</li>
-                <li>Leadership experience</li>
+                <li>Strong communication and leadership skills</li>
+                <li>Interest in marketing, partnerships, or finance</li>
               </ul>
             </div>
           </div>
@@ -340,7 +324,6 @@ const ExecutiveForm = () => {
               >
                 <option value="">-- Select Team --</option>
                 <option value="technology">Technology Team</option>
-                <option value="strategy">Strategy Team</option>
                 <option value="event">Event Team</option>
               </select>
             </div>
@@ -349,12 +332,6 @@ const ExecutiveForm = () => {
           {/* Conditional Questions */}
           {formData.firstChoiceTeam === "technology" && (
             <TechnologyQuestions
-              formData={formData}
-              handleChange={handleChange}
-            />
-          )}
-          {formData.firstChoiceTeam === "strategy" && (
-            <StrategyQuestions
               formData={formData}
               handleChange={handleChange}
             />
