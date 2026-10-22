@@ -6,12 +6,12 @@ const Home = () => {
     <div className="mt-[60px] md:mt-[80px]">
       {/* Hero Section */}
       <section
-        className="py-32 flex flex-col justify-center items-start bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/background/home.png')" }}
+        className="page-hero"
+        style={{ backgroundImage: "url('/background/osimage.png')" }}
       >
         <div className="container mx-auto px-6 sm:px-12">
           <h1 className="text-6xl font-bold font-club mb-6 text-white">
-            SFU OS Dev Club
+            SFU Open Source Development Club
           </h1>
           <p className="text-xl mb-10 text-white">
             Join SFU Open Source Development Club and collaborate with tech,

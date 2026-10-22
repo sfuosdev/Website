@@ -93,8 +93,8 @@ const Teams = () => {
   return (
     <div className="mt-[60px] md:mt-[80px]">
       <section
-        className="flex flex-col items-start justify-center bg-cover bg-center bg-no-repeat py-32"
-        style={{ backgroundImage: "url('/background/project.png')" }}
+        className="page-hero"
+        style={{ backgroundImage: "url('/background/osimage.png')" }}
       >
         <div className="container mx-auto px-6 sm:px-12">
           <h1 className="mb-6 text-6xl font-bold font-club text-white">

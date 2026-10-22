@@ -54,8 +54,8 @@ const Events = () => {
     <div className="mt-[60px] md:mt-[80px]">
       {/* Hero Section */}
       <section
-        className="py-32 flex flex-col justify-center items-start bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/background/event.png')" }}
+        className="page-hero"
+        style={{ backgroundImage: "url('/background/osimage.png')" }}
       >
         <div className="container mx-auto px-6 sm:px-12">
           <h1 className="text-6xl font-bold font-club mb-6 text-white">
