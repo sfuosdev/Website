@@ -61,8 +61,15 @@ const ExecutiveForm = () => {
         })
         .catch((error) => {
           console.error("Error submitting application:", error);
+
+          const message = axios.isAxiosError(error)
+            ? error.response?.data?.message
+            : undefined;
+
           alert(
-            "There was an error submitting your application. Please try again."
+            typeof message === "string"
+              ? message
+              : "There was an error submitting your application. Please try again."
           );
         });
 
