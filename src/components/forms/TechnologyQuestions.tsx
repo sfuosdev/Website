@@ -1,7 +1,8 @@
 import React from "react";
+import type { FormData } from "../../interfaces/exec-form-data-type";
 
 interface TechnologyQuestionsProps {
-  formData: any;
+  formData: FormData;
   handleChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
@@ -16,156 +17,13 @@ const TechnologyQuestions: React.FC<TechnologyQuestionsProps> = ({
       <h2 className="text-2xl font-bold mb-4 border-b pb-2">
         Technology Team Questions
       </h2>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q1"
-        >
-          Can you tell us a little bit about yourself?{" "}
-          <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q1"
-          name="tech_q1"
-          value={formData.questions.tech_q1 || ""}
-          onChange={handleChange}
-          rows={4}
-          required
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q2"
-        >
-          What interests you about this position?{" "}
-          <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q2"
-          name="tech_q2"
-          value={formData.questions.tech_q2 || ""}
-          onChange={handleChange}
-          rows={4}
-          required
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q3"
-        >
-          What programming languages and frameworks have you worked with
-          previously? <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q3"
-          name="tech_q3"
-          value={formData.questions.tech_q3 || ""}
-          onChange={handleChange}
-          rows={4}
-          required
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q4"
-        >
-          What is your experience with version control systems such as Git and
-          GitHub / GitLab? {"\n"}
-          Can you provide examples of how you collaborated with others?{" "}
-          <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q4"
-          name="tech_q4"
-          value={formData.questions.tech_q4 || ""}
-          onChange={handleChange}
-          rows={4}
-          required
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q5"
-        >
-          How are you familar with cloud computing tools and platforms such as
-          AWS, Supabase, and Firebase? <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q5"
-          name="tech_q5"
-          value={formData.questions.tech_q5 || ""}
-          onChange={handleChange}
-          rows={4}
-          required
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q6"
-        >
-          What do you want to achieve or learn from this role?
-          <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q6"
-          name="tech_q6"
-          value={formData.questions.tech_q6 || ""}
-          onChange={handleChange}
-          rows={4}
-          required
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q7"
-        >
-          What is your availability for fall semester?
-          <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q7"
-          name="tech_q7"
-          value={formData.questions.tech_q7 || ""}
-          onChange={handleChange}
-          rows={4}
-          required
-        ></textarea>
-      </div>
-      <div className="mb-4">
-        <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor="tech-q8"
-        >
-          Is there anything else you would like us to know?
-        </label>
-        <textarea
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="tech-q8"
-          name="tech_q8"
-          value={formData.questions.tech_q8 || ""}
-          onChange={handleChange}
-          rows={4}
-        ></textarea>
-      </div>
+
       <div className="mb-4">
         <label
           className="block text-gray-700 text-sm font-bold mb-2"
           htmlFor="tech-q9"
         >
-          What is your Discord user name in our club server
+          What is your Discord user name in our OS Dev Discord server?
           <span className="text-red-500">*</span>
         </label>
         <textarea
@@ -183,7 +41,7 @@ const TechnologyQuestions: React.FC<TechnologyQuestionsProps> = ({
           className="block text-gray-700 text-sm font-bold mb-2"
           htmlFor="tech-q10"
         >
-          Please provide a link to your GitHub or Portfolio.{" "}
+          Please provide a link to your GitHub.{" "}
           <span className="text-red-500">*</span>
         </label>
         <input
@@ -196,6 +54,22 @@ const TechnologyQuestions: React.FC<TechnologyQuestionsProps> = ({
           placeholder="https://github.com/..."
           required
         />
+      </div>
+      <div className="mb-4">
+        <label
+          className="block text-gray-700 text-sm font-bold mb-2"
+          htmlFor="tech-q8"
+        >
+          Do you have any questions for us? (Optional)
+        </label>
+        <textarea
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="tech-q8"
+          name="tech_q8"
+          value={formData.questions.tech_q8 || ""}
+          onChange={handleChange}
+          rows={4}
+        ></textarea>
       </div>
     </div>
   );

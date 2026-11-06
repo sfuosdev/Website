@@ -26,9 +26,13 @@ const ExecutiveForm = () => {
   ) => {
     const { name, value } = e.target;
 
+    if (name === "firstChoiceTeam") {
+      setFormData((prev) => ({ ...prev, firstChoiceTeam: value, questions: {} }));
+      return;
+    }
+
     if (
       name.startsWith("tech_") ||
-      name.startsWith("strat_") ||
       name.startsWith("event_")
     ) {
       setFormData((prev) => ({
@@ -296,17 +300,6 @@ const ExecutiveForm = () => {
                 <span className="text-gray-700">No</span>
               </label>
             </div>
-          </div>
-          <div className="mb-4">
-            {" "}
-            <p>
-              - Below this section, there will be specific questions based on
-              the team you select.
-            </p>{" "}
-            <p>
-              - Please note that the answer that you input will not be saved
-              until you submit the form.
-            </p>
           </div>
 
           {/* Team Selection */}
