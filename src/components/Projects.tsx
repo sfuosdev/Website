@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Project from "./Project";
 import { getBasePath } from "../utils/basePath";
 import { onGoingProjectsList } from "../lists/onGoingProjects";

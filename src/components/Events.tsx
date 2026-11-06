@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Event from "./Event";
 import { upcomingEventsList } from "../lists/upcomingEvents";
 import { pastEventsList } from "../lists/pastEvents";
