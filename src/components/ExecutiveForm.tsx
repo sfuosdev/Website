@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FormData } from "../interfaces/exec-form-data-type";
 import TechnologyQuestions from "./forms/TechnologyQuestions";
 import EventQuestions from "./forms/EventQuestions";
@@ -18,6 +18,27 @@ const ExecutiveForm = () => {
     firstChoiceTeam: "",
     questions: {},
   });
+
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [resumeError, setResumeError] = useState("");
+  const [isDragging, setIsDragging] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const resumeInput = useRef<HTMLInputElement>(null);
+
+  const selectResume = (files: FileList | null) => {
+    if (!files?.length) return;
+    const file = files[0];
+    if (files.length !== 1 || !file.name.toLowerCase().endsWith(".pdf") ||
+        (file.type && file.type !== "application/pdf") || file.size === 0 ||
+        file.size > 5 * 1024 * 1024) {
+      setResumeFile(null);
+      setResumeError("Please upload one PDF resume, up to 5 MB.");
+      if (resumeInput.current) resumeInput.current.value = "";
+      return;
+    }
+    setResumeFile(file);
+    setResumeError("");
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -50,34 +71,37 @@ const ExecutiveForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    if (!resumeFile) {
+      setResumeError("Please upload your resume before submitting.");
+      resumeInput.current?.focus();
+      return;
+    }
+    if (!window.confirm("Did you confirm that all your answers are final and ready for submission?")) return;
 
-    const isConfirmed = window.confirm(
-      "Did you confirm that all your answers are final and ready for submission?"
-    );
-
-    if (isConfirmed) {
-      axios
-        .post(endpoint + "/api/submit/exec-form", formData)
-        .then(() => {
-          alert("Application submitted successfully!");
-        })
-        .catch((error) => {
-          console.error("Error submitting application:", error);
-
-          const message = axios.isAxiosError(error)
-            ? error.response?.data?.message
-            : undefined;
-
-          alert(
-            typeof message === "string"
-              ? message
-              : "There was an error submitting your application. Please try again."
-          );
-        });
-
-      console.log(JSON.stringify(formData, null, 2));
+    setIsSubmitting(true);
+    try {
+      const content = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(",")[1]);
+        reader.onerror = () => reject(new Error("Could not read your resume. Please select it again."));
+        reader.readAsDataURL(resumeFile);
+      });
+      await axios.post(endpoint + "/api/submit/exec-form", {
+        ...formData,
+        resume: { filename: resumeFile.name, content },
+      });
+      alert("Application submitted successfully!");
+    } catch (error) {
+      const data = axios.isAxiosError(error) ? error.response?.data : undefined;
+      const detail = Array.isArray(data?.detail) ? data.detail[0]?.msg : undefined;
+      alert(typeof data?.message === "string" ? data.message :
+        typeof detail === "string" ? detail :
+        "There was an error submitting your application. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -339,12 +363,57 @@ const ExecutiveForm = () => {
           {formData.firstChoiceTeam === "event" && (
             <EventQuestions formData={formData} handleChange={handleChange} />
           )}
+          <section className="mb-8" aria-labelledby="resume-heading">
+            <h2 id="resume-heading" className="text-2xl font-bold mb-4 border-b pb-2">
+              Resume <span className="text-red-500">*</span>
+            </h2>
+            <div
+              className={`relative rounded-lg border-2 border-dashed p-8 text-center transition-colors ${isDragging ? "border-blue-600 bg-blue-50" : "border-gray-300 bg-gray-50"}`}
+              onDragOver={(e) => { e.preventDefault(); if (!isSubmitting) setIsDragging(true); }}
+              onDragLeave={() => setIsDragging(false)}
+              onDrop={(e) => {
+                e.preventDefault();
+                setIsDragging(false);
+                if (!isSubmitting) selectResume(e.dataTransfer.files);
+              }}
+            >
+              <label htmlFor="resume" className="block cursor-pointer">
+                <span className="block font-semibold text-gray-800">Drop your resume here or choose a file</span>
+                <span id="resume-help" className="mt-2 block text-sm text-gray-600">One PDF file, up to 5 MB. Required for both teams.</span>
+                <input
+                  ref={resumeInput}
+                  id="resume"
+                  type="file"
+                  accept=".pdf,application/pdf"
+                  required={!resumeFile}
+                  disabled={isSubmitting}
+                  aria-describedby={resumeError ? "resume-help resume-error" : "resume-help"}
+                  aria-invalid={Boolean(resumeError)}
+                  onChange={(e) => selectResume(e.target.files)}
+                  className="mt-4 block w-full text-sm text-gray-700 file:mr-4 file:rounded file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:font-semibold file:text-white"
+                />
+              </label>
+            </div>
+            {resumeFile && (
+              <div className="mt-3 flex items-center justify-between gap-3 rounded border border-gray-200 p-3">
+                <p className="min-w-0 break-all text-sm text-gray-700" aria-live="polite">
+                  {resumeFile.name} ({(resumeFile.size / 1024).toFixed(0)} KB)
+                </p>
+                <button type="button" disabled={isSubmitting} className="text-sm font-semibold text-red-600 disabled:opacity-50"
+                  onClick={() => { setResumeFile(null); if (resumeInput.current) resumeInput.current.value = ""; }}>
+                  Remove
+                </button>
+              </div>
+            )}
+            {resumeError && <p id="resume-error" role="alert" className="mt-2 text-sm text-red-600">{resumeError}</p>}
+          </section>
           <div className="flex items-center justify-center">
             <button
               className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline transition duration-300"
+              disabled={isSubmitting}
               type="submit"
             >
-              Submit Application
+              {isSubmitting ? "Submitting..." : "Submit Application"}
             </button>
           </div>
         </form>
